@@ -46,7 +46,6 @@
             color: var(--footer-text-color);
             margin-top: 2rem;
         }
-        /* Estilo mejorado para el menú */
         nav {
             display: flex;
             justify-content: center;
@@ -79,11 +78,8 @@
     </header>
     <!-- Menú importado desde un archivo externo -->
     <div id="menu-container"></div>
-    <main>
-        <p>¡Proyecto dedicado a mapear localizaciones en Google Maps y crear mapas para TD2.</p>
-        <h2>Video destacado</h2>
-        <iframe src="https://www.youtube.com/embed/v_ZYdcA8W4c" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p>Haz clic en el video para aprender más sobre este proyecto.</p>
+    <main id="main-content">
+        <!-- El contenido de la página se cargará aquí -->
     </main>
     <footer>
         <p>&copy; 2025 TD2 Mapping Proyect. All rights reserved.</p>
@@ -98,12 +94,28 @@
                 // Establecer el enlace activo automáticamente si es necesario
                 const links = document.querySelectorAll('#menu-container nav a');
                 links.forEach(link => {
-                    if (link.href === window.location.href) {
+                    link.addEventListener('click', function(event) {
+                        event.preventDefault();
+                        loadPageContent(link.getAttribute('href'));
+                        links.forEach(l => l.classList.remove('active'));
                         link.classList.add('active');
-                    }
+                    });
                 });
             })
             .catch(error => console.error('Error al cargar el menú:', error));
+
+        // Función para cargar el contenido de la página
+        function loadPageContent(page) {
+            fetch(page)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('main-content').innerHTML = html;
+                })
+                .catch(error => console.error('Error al cargar el contenido:', error));
+        }
+
+        // Cargar la página inicial por defecto
+        loadPageContent('home.html');
     </script>
 </body>
 </html>
