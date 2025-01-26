@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Proyecto en GitHub Pages</title>
+    <title>TD2 Mapping Proyect</title>
     <style>
         :root {
             --primary-color: #4b0082; /* Índigo profundo */
             --background-color: #121212; /* Fondo oscuro */
             --text-color: #e0e0e0; /* Texto claro */
             --footer-text-color: #b39ddb; /* Índigo suave */
-            --menu-background-color: #333; /* Fondo del menú */
+            --menu-background-color: #1e1e1e; /* Fondo del menú */
             --menu-text-color: #e0e0e0; /* Texto del menú */
-            --menu-hover-color: #4b0082; /* Color al pasar el cursor */
+            --menu-hover-color: #6200ea; /* Color al pasar el cursor */
+            --menu-active-color: #3700b3; /* Color para el enlace activo */
         }
         body {
             font-family: Arial, sans-serif;
@@ -45,22 +46,47 @@
             color: var(--footer-text-color);
             margin-top: 2rem;
         }
+        /* Estilo mejorado para el menú */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: var(--menu-background-color);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: var(--menu-text-color);
+            text-decoration: none;
+            margin: 0 1rem;
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        nav a:hover {
+            background-color: var(--menu-hover-color);
+            transform: scale(1.1);
+        }
+        nav a.active {
+            background-color: var(--menu-active-color);
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Bienvenido a Mi Proyecto</h1>
+        <h1>TD2 Mapping Group</h1>
     </header>
     <!-- Menú importado desde un archivo externo -->
     <div id="menu-container"></div>
     <main>
-        <p>¡Gracias por visitar mi sitio web! Aquí puedes encontrar más información sobre mi proyecto.</p>
+        <p>¡Proyecto dedicado a mapear localizaciones en Google Maps y crear mapas para TD2.</p>
         <h2>Video destacado</h2>
         <iframe src="https://www.youtube.com/embed/v_ZYdcA8W4c" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <p>Haz clic en el video para aprender más sobre este proyecto.</p>
     </main>
     <footer>
-        <p>&copy; 2025 Mi Proyecto. Todos los derechos reservados.</p>
+        <p>&copy; 2025 TD2 Mapping Proyect. Todos los derechos reservados.</p>
     </footer>
     <script>
         // Cargar el menú desde un archivo externo
@@ -68,6 +94,14 @@
             .then(response => response.text())
             .then(html => {
                 document.getElementById('menu-container').innerHTML = html;
+
+                // Establecer el enlace activo automáticamente si es necesario
+                const links = document.querySelectorAll('#menu-container nav a');
+                links.forEach(link => {
+                    if (link.href === window.location.href) {
+                        link.classList.add('active');
+                    }
+                });
             })
             .catch(error => console.error('Error al cargar el menú:', error));
     </script>
