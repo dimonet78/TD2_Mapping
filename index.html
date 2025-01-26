@@ -70,9 +70,9 @@
         <h1 data-lang="title">TD2 Mapping Group</h1>
     </header>
     <nav>
-        <a href="#" data-lang="nav_home" onclick="loadPageContent('home')">Inicio</a>
-        <a href="#" data-lang="nav_about" onclick="loadPageContent('about')">Sobre Nosotros</a>
-        <a href="#" data-lang="nav_contact" onclick="loadPageContent('contact')">Contacto</a>
+        <a href="#" data-lang="nav_home" onclick="loadPageContent('home.html')">Inicio</a>
+        <a href="#" data-lang="nav_about" onclick="loadPageContent('about.html')">Sobre Nosotros</a>
+        <a href="#" data-lang="nav_contact" onclick="loadPageContent('contact.html')">Contacto</a>
     </nav>
     <main id="main-content">
         <!-- El contenido de la página se cargará aquí -->
@@ -82,37 +82,12 @@
     </footer>
     <script>
         // Contenido en diferentes idiomas
-        const content = {
+        const translations = {
             "es": {
                 "title": "TD2 Mapping Group",
                 "nav_home": "Inicio",
                 "nav_about": "Sobre Nosotros",
                 "nav_contact": "Contacto",
-                "home": `
-                    <section>
-                        <p>¡Proyecto dedicado a mapear localizaciones en Google Maps y crear mapas para TD2.</p>
-                        <h2>Video destacado</h2>
-                        <iframe src="https://www.youtube.com/embed/v_ZYdcA8W4c" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <p>Haz clic en el video para aprender más sobre este proyecto.</p>
-                    </section>
-                `,
-                "about": `
-                    <section>
-                        <h2>Sobre Nosotros</h2>
-                        <p>TD2 Mapping Group es un proyecto dedicado a mapear localizaciones en Google Maps y crear mapas detallados para TD2.</p>
-                    </section>
-                `,
-                "contact": `
-                    <section>
-                        <h2>Contáctanos</h2>
-                        <p>Formulario de contacto para el proyecto TD2 Mapping...</p>
-                        <h3>Únete a nuestro Discord</h3>
-                        <p>¡Únete a nuestra comunidad en Discord para discutir el proyecto y colaborar con otros miembros del grupo!</p>
-                        <a href="https://discord.gg/tu-invitacion" target="_blank">Únete a nuestro Discord</a>
-                        <h3>Imagen del Proyecto</h3>
-                        <img src="ruta/a/tu/imagen.jpg" alt="Descripción de la imagen" style="width:100%; max-width:600px; margin-top:20px;">
-                    </section>
-                `,
                 "footer": "© 2025 TD2 Mapping Project. Todos los derechos reservados."
             },
             "en": {
@@ -120,31 +95,6 @@
                 "nav_home": "Home",
                 "nav_about": "About Us",
                 "nav_contact": "Contact",
-                "home": `
-                    <section>
-                        <p>Project dedicated to mapping locations on Google Maps and creating maps for TD2.</p>
-                        <h2>Featured Video</h2>
-                        <iframe src="https://www.youtube.com/embed/v_ZYdcA8W4c" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <p>Click the video to learn more about this project.</p>
-                    </section>
-                `,
-                "about": `
-                    <section>
-                        <h2>About Us</h2>
-                        <p>TD2 Mapping Group is a project dedicated to mapping locations on Google Maps and creating detailed maps for TD2.</p>
-                    </section>
-                `,
-                "contact": `
-                    <section>
-                        <h2>Contact Us</h2>
-                        <p>Contact form for the TD2 Mapping project...</p>
-                        <h3>Join our Discord</h3>
-                        <p>Join our community on Discord to discuss the project and collaborate with other members!</p>
-                        <a href="https://discord.gg/tu-invitacion" target="_blank">Join our Discord</a>
-                        <h3>Project Image</h3>
-                        <img src="ruta/a/tu/imagen.jpg" alt="Image description" style="width:100%; max-width:600px; margin-top:20px;">
-                    </section>
-                `,
                 "footer": "© 2025 TD2 Mapping Project. All rights reserved."
             }
         };
@@ -156,22 +106,28 @@
         function translateContent() {
             document.querySelectorAll('[data-lang]').forEach(element => {
                 const key = element.getAttribute('data-lang');
-                if (content[userLang] && content[userLang][key]) {
-                    element.innerHTML = content[userLang][key];
+                if (translations[userLang] && translations[userLang][key]) {
+                    element.innerHTML = translations[userLang][key];
                 }
             });
         }
 
         // Función para cargar el contenido de la página
         function loadPageContent(page) {
-            document.getElementById('main-content').innerHTML = content[userLang][page];
+            fetch(page)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('main-content').innerHTML = html;
+                    translateContent(); // Traducir el contenido de la página cargada
+                })
+                .catch(error => console.error('Error al cargar el contenido:', error));
         }
 
-        // Llamar a la función para traducir el contenido
+        // Traducir el contenido inicial
         translateContent();
 
         // Cargar la página inicial por defecto
-        loadPageContent('home');
+        loadPageContent('home.html');
     </script>
 </body>
 </html>
