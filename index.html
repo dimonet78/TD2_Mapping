@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TD2 Mapping Proyect</title>
+    <title>TD2 Mapping Project</title>
     <style>
         :root {
-            --primary-color: #4b0082; /* Índigo profundo */
-            --background-color: #121212; /* Fondo oscuro */
-            --text-color: #e0e0e0; /* Texto claro */
-            --footer-text-color: #b39ddb; /* Índigo suave */
-            --menu-background-color: #1e1e1e; /* Fondo del menú */
-            --menu-text-color: #e0e0e0; /* Texto del menú */
-            --menu-hover-color: #6200ea; /* Color al pasar el cursor */
-            --menu-active-color: #3700b3; /* Color para el enlace activo */
+            --primary-color: #4b0082;
+            --background-color: #121212;
+            --text-color: #e0e0e0;
+            --footer-text-color: #b39ddb;
+            --menu-background-color: #1e1e1e;
+            --menu-text-color: #e0e0e0;
+            --menu-hover-color: #6200ea;
+            --menu-active-color: #3700b3;
         }
         body {
             font-family: Arial, sans-serif;
@@ -22,7 +22,7 @@
             background-color: var(--background-color);
             color: var(--text-color);
         }
-        header {
+        header, footer {
             background-color: var(--primary-color);
             color: var(--footer-text-color);
             padding: 1rem 0;
@@ -38,13 +38,6 @@
             height: 315px;
             border: none;
             margin: 1rem 0;
-        }
-        footer {
-            text-align: center;
-            padding: 1rem 0;
-            background-color: var(--primary-color);
-            color: var(--footer-text-color);
-            margin-top: 2rem;
         }
         nav {
             display: flex;
@@ -74,48 +67,111 @@
 </head>
 <body>
     <header>
-        <h1>TD2 Mapping Group</h1>
+        <h1 data-lang="title">TD2 Mapping Group</h1>
     </header>
-    <!-- Menú importado desde un archivo externo -->
-    <div id="menu-container"></div>
+    <nav>
+        <a href="#" data-lang="nav_home" onclick="loadPageContent('home')">Inicio</a>
+        <a href="#" data-lang="nav_about" onclick="loadPageContent('about')">Sobre Nosotros</a>
+        <a href="#" data-lang="nav_contact" onclick="loadPageContent('contact')">Contacto</a>
+    </nav>
     <main id="main-content">
         <!-- El contenido de la página se cargará aquí -->
     </main>
     <footer>
-        <p>&copy; 2025 TD2 Mapping Proyect. All rights reserved.</p>
+        <p data-lang="footer">© 2025 TD2 Mapping Project. Todos los derechos reservados.</p>
     </footer>
     <script>
-        // Cargar el menú desde un archivo externo
-        fetch('menu.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('menu-container').innerHTML = html;
+        // Contenido en diferentes idiomas
+        const content = {
+            "es": {
+                "title": "TD2 Mapping Group",
+                "nav_home": "Inicio",
+                "nav_about": "Sobre Nosotros",
+                "nav_contact": "Contacto",
+                "home": `
+                    <section>
+                        <p>¡Proyecto dedicado a mapear localizaciones en Google Maps y crear mapas para TD2.</p>
+                        <h2>Video destacado</h2>
+                        <iframe src="https://www.youtube.com/embed/v_ZYdcA8W4c" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <p>Haz clic en el video para aprender más sobre este proyecto.</p>
+                    </section>
+                `,
+                "about": `
+                    <section>
+                        <h2>Sobre Nosotros</h2>
+                        <p>TD2 Mapping Group es un proyecto dedicado a mapear localizaciones en Google Maps y crear mapas detallados para TD2.</p>
+                    </section>
+                `,
+                "contact": `
+                    <section>
+                        <h2>Contáctanos</h2>
+                        <p>Formulario de contacto para el proyecto TD2 Mapping...</p>
+                        <h3>Únete a nuestro Discord</h3>
+                        <p>¡Únete a nuestra comunidad en Discord para discutir el proyecto y colaborar con otros miembros del grupo!</p>
+                        <a href="https://discord.gg/tu-invitacion" target="_blank">Únete a nuestro Discord</a>
+                        <h3>Imagen del Proyecto</h3>
+                        <img src="ruta/a/tu/imagen.jpg" alt="Descripción de la imagen" style="width:100%; max-width:600px; margin-top:20px;">
+                    </section>
+                `,
+                "footer": "© 2025 TD2 Mapping Project. Todos los derechos reservados."
+            },
+            "en": {
+                "title": "TD2 Mapping Group",
+                "nav_home": "Home",
+                "nav_about": "About Us",
+                "nav_contact": "Contact",
+                "home": `
+                    <section>
+                        <p>Project dedicated to mapping locations on Google Maps and creating maps for TD2.</p>
+                        <h2>Featured Video</h2>
+                        <iframe src="https://www.youtube.com/embed/v_ZYdcA8W4c" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <p>Click the video to learn more about this project.</p>
+                    </section>
+                `,
+                "about": `
+                    <section>
+                        <h2>About Us</h2>
+                        <p>TD2 Mapping Group is a project dedicated to mapping locations on Google Maps and creating detailed maps for TD2.</p>
+                    </section>
+                `,
+                "contact": `
+                    <section>
+                        <h2>Contact Us</h2>
+                        <p>Contact form for the TD2 Mapping project...</p>
+                        <h3>Join our Discord</h3>
+                        <p>Join our community on Discord to discuss the project and collaborate with other members!</p>
+                        <a href="https://discord.gg/tu-invitacion" target="_blank">Join our Discord</a>
+                        <h3>Project Image</h3>
+                        <img src="ruta/a/tu/imagen.jpg" alt="Image description" style="width:100%; max-width:600px; margin-top:20px;">
+                    </section>
+                `,
+                "footer": "© 2025 TD2 Mapping Project. All rights reserved."
+            }
+        };
 
-                // Establecer el enlace activo automáticamente si es necesario
-                const links = document.querySelectorAll('#menu-container nav a');
-                links.forEach(link => {
-                    link.addEventListener('click', function(event) {
-                        event.preventDefault();
-                        loadPageContent(link.getAttribute('href'));
-                        links.forEach(l => l.classList.remove('active'));
-                        link.classList.add('active');
-                    });
-                });
-            })
-            .catch(error => console.error('Error al cargar el menú:', error));
+        // Detectar el idioma del navegador
+        const userLang = navigator.language.startsWith('es') ? 'es' : 'en';
+
+        // Función para traducir el contenido
+        function translateContent() {
+            document.querySelectorAll('[data-lang]').forEach(element => {
+                const key = element.getAttribute('data-lang');
+                if (content[userLang] && content[userLang][key]) {
+                    element.innerHTML = content[userLang][key];
+                }
+            });
+        }
 
         // Función para cargar el contenido de la página
         function loadPageContent(page) {
-            fetch(page)
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById('main-content').innerHTML = html;
-                })
-                .catch(error => console.error('Error al cargar el contenido:', error));
+            document.getElementById('main-content').innerHTML = content[userLang][page];
         }
 
+        // Llamar a la función para traducir el contenido
+        translateContent();
+
         // Cargar la página inicial por defecto
-        loadPageContent('home.html');
+        loadPageContent('home');
     </script>
 </body>
 </html>
