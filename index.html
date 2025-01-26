@@ -67,47 +67,35 @@
 </head>
 <body>
     <header>
-        <h1 data-lang="title">TD2 Mapping Group</h1>
+        <h1 data-lang="title-es">TD2 Mapping Group</h1>
+        <h1 data-lang="title-en" style="display:none;">TD2 Mapping Group</h1>
     </header>
     <nav>
-        <a href="#" data-lang="nav_home" onclick="loadPageContent('home.html')">Inicio</a>
-        <a href="#" data-lang="nav_about" onclick="loadPageContent('about.html')">Sobre Nosotros</a>
-        <a href="#" data-lang="nav_contact" onclick="loadPageContent('contact.html')">Contacto</a>
+        <a href="#" data-lang="nav_home-es" onclick="loadPageContent('home.html')">Inicio</a>
+        <a href="#" data-lang="nav_home-en" onclick="loadPageContent('home.html')" style="display:none;">Home</a>
+        <a href="#" data-lang="nav_about-es" onclick="loadPageContent('about.html')">Sobre Nosotros</a>
+        <a href="#" data-lang="nav_about-en" onclick="loadPageContent('about.html')" style="display:none;">About Us</a>
+        <a href="#" data-lang="nav_contact-es" onclick="loadPageContent('contact.html')">Contacto</a>
+        <a href="#" data-lang="nav_contact-en" onclick="loadPageContent('contact.html')" style="display:none;">Contact</a>
     </nav>
     <main id="main-content">
         <!-- El contenido de la página se cargará aquí -->
     </main>
     <footer>
-        <p data-lang="footer">© 2025 TD2 Mapping Project. Todos los derechos reservados.</p>
+        <p data-lang="footer-es">© 2025 TD2 Mapping Project. Todos los derechos reservados.</p>
+        <p data-lang="footer-en" style="display:none;">© 2025 TD2 Mapping Project. All rights reserved.</p>
     </footer>
     <script>
-        // Contenido en diferentes idiomas
-        const translations = {
-            "es": {
-                "title": "TD2 Mapping Group",
-                "nav_home": "Inicio",
-                "nav_about": "Sobre Nosotros",
-                "nav_contact": "Contacto",
-                "footer": "© 2025 TD2 Mapping Project. Todos los derechos reservados."
-            },
-            "en": {
-                "title": "TD2 Mapping Group",
-                "nav_home": "Home",
-                "nav_about": "About Us",
-                "nav_contact": "Contact",
-                "footer": "© 2025 TD2 Mapping Project. All rights reserved."
-            }
-        };
-
         // Detectar el idioma del navegador
         const userLang = navigator.language.startsWith('es') ? 'es' : 'en';
 
-        // Función para traducir el contenido
-        function translateContent() {
+        // Función para mostrar el contenido del idioma adecuado
+        function showLanguageContent(lang) {
             document.querySelectorAll('[data-lang]').forEach(element => {
-                const key = element.getAttribute('data-lang');
-                if (translations[userLang] && translations[userLang][key]) {
-                    element.innerHTML = translations[userLang][key];
+                if (element.getAttribute('data-lang').endsWith(lang)) {
+                    element.style.display = '';
+                } else {
+                    element.style.display = 'none';
                 }
             });
         }
@@ -117,14 +105,16 @@
             fetch(page)
                 .then(response => response.text())
                 .then(html => {
-                    document.getElementById('main-content').innerHTML = html;
-                    translateContent(); // Traducir el contenido de la página cargada
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    document.getElementById('main-content').innerHTML = doc.body.innerHTML;
+                    showLanguageContent(userLang);
                 })
                 .catch(error => console.error('Error al cargar el contenido:', error));
         }
 
-        // Traducir el contenido inicial
-        translateContent();
+        // Mostrar el contenido del idioma adecuado en la página inicial
+        showLanguageContent(userLang);
 
         // Cargar la página inicial por defecto
         loadPageContent('home.html');
