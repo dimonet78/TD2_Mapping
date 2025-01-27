@@ -5,7 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TD2 Mapping Project</title>
     <style>
-        /* Estilos aquí */
+        :root {
+            --primary-color: #4b0082;
+            --background-color: #121212;
+            --text-color: #e0e0e0;
+            --footer-text-color: #b39ddb;
+            --menu-background-color: #1e1e1e;
+            --menu-text-color: #e0e0e0;
+            --menu-hover-color: #6200ea;
+            --menu-active-color: #3700b3;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+        header, footer {
+            background-color: var(--primary-color);
+            color: var(--footer-text-color);
+            padding: 1rem 0;
+            text-align: center;
+        }
+        main {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        iframe {
+            width: 100%;
+            height: 315px;
+            border: none;
+            margin: 1rem 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: var(--menu-background-color);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: var(--menu-text-color);
+            text-decoration: none;
+            margin: 0 1rem;
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        nav a:hover {
+            background-color: var(--menu-hover-color);
+            transform: scale(1.1);
+        }
+        nav a.active {
+            background-color: var(--menu-active-color);
+        }
+        nav img {
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 0.5rem;
+        }
     </style>
 </head>
 <body>
