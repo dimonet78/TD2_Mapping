@@ -29,7 +29,7 @@
      inkscape:window-x="3832"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="Layer_2" />
+     inkscape:current-layer="g22" />
   <defs
      id="defs1">
     <style
@@ -51,7 +51,7 @@
      id="g22"
      inkscape:label="TRIANGLE"
      transform="matrix(0.86776557,0,0,0.86776557,-146.99949,-1.1279363)"
-     style="display:none">
+     style="display:inline">
     <g
        id="g21">
       <path
@@ -218,7 +218,8 @@
   <g
      id="g3"
      inkscape:label="PRESS CIRCLE"
-     transform="matrix(0.86935853,0,0,0.86935853,-49.118797,-50.248883)">
+     transform="matrix(0.86935853,0,0,0.86935853,-49.118797,-50.248883)"
+     style="display:none">
     <g
        id="g2">
       <path
