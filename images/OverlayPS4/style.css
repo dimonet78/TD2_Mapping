@@ -1180,7 +1180,7 @@ background-position: 0 -70px;
 
 .ds4 .back,
 .ds4 .start {
-  background: url(ps4-assets/start.svg);
+  background: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4/start.svg);
   width: 28px;
   height: 46px;
   opacity: 0;
@@ -1216,7 +1216,7 @@ background-position: 0 -70px;
   position: absolute;
   width: 55px;
   height: 55px;
-  background: url(ps4-assets/face.svg);
+  background: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4/face.svg);
 }
 
 .ds4 .button.pressed {
@@ -1256,7 +1256,7 @@ background-position: 0 -70px;
 
 .ds4 .stick {
   position: absolute;
-  background: url(ps4-assets/sticks.svg);
+  background: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4/sticks.svg);
   height: 94px;
   width: 94px;
 }
@@ -1288,7 +1288,7 @@ background-position: 0 -70px;
 }
 
 .ds4 .face {
-  background: url(ps4-assets/dpad.svg);
+  background: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4/dpad.svg);
   position: absolute;
 }
 
