@@ -1057,7 +1057,7 @@ strong {
 
 /*BEGIN PS4 Controller Styling*/
 .controller.ds4 {
-  background: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4%20-%20VirtualValhalla/base.svg);
+  background: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4-VirtualValhalla/base.svg);
   height: 678.357px;
   width: 964.781px;
   /*    margin-left: -403px;
@@ -1065,7 +1065,7 @@ strong {
 }
 
 .ds4.disconnected {
-  background: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4%20-%20VirtualValhalla/base.svg);
+  background: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4-VirtualValhalla/base.svg);
 }
 
 .ds4.disconnected div {
@@ -1082,7 +1082,7 @@ strong {
 .ds4 .trigger {
   width: 99px;
   height: 100%;
-  background: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4%20-%20VirtualValhalla/triggers.svg);
+  background: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4-VirtualValhalla/triggers.svg);
   opacity: 0;
 }
 
@@ -1098,7 +1098,7 @@ strong {
 .ds4 .bumper {
   width: 99px;
   height: 23px;
-  background: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4%20-%20VirtualValhalla/bumper.svg) no-repeat;
+  background: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4-VirtualValhalla/bumper.svg) no-repeat;
   opacity: 0;
 }
 
@@ -1134,7 +1134,7 @@ strong {
 }
 
 .ds4 .touchpad.pressed {
-  background: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4%20-%20VirtualValhalla/touchpad.svg) no-repeat center;
+  background: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4-VirtualValhalla/touchpad.svg) no-repeat center;
 }
 
 .ds4 .meta {
@@ -1146,7 +1146,7 @@ strong {
 }
 
 .ds4 .meta.pressed {
-  background: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4%20-%20VirtualValhalla/LogoLamborghini.svg) no-repeat center;
+  background: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4-VirtualValhalla/LogoLamborghini.svg) no-repeat center;
 }
 
 /*Not needed, but I like keeping them here for posterity*/
@@ -1180,7 +1180,7 @@ background-position: 0 -70px;
 
 .ds4 .back,
 .ds4 .start {
-  background: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4%20-%20VirtualValhalla/start.svg);
+  background: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4-VirtualValhalla/start.svg);
   width: 28px;
   height: 46px;
   opacity: 0;
@@ -1216,7 +1216,7 @@ background-position: 0 -70px;
   position: absolute;
   width: 55px;
   height: 55px;
-  background: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4%20-%20VirtualValhalla/face.svg);
+  background: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4-VirtualValhalla/face.svg);
 }
 
 .ds4 .button.pressed {
@@ -1256,7 +1256,7 @@ background-position: 0 -70px;
 
 .ds4 .stick {
   position: absolute;
-  background: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4%20-%20VirtualValhalla/sticks.svg);
+  background: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4-VirtualValhalla/sticks.svg);
   height: 94px;
   width: 94px;
 }
@@ -1288,7 +1288,7 @@ background-position: 0 -70px;
 }
 
 .ds4 .face {
-  background: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4%20-%20VirtualValhalla/dpad.svg);
+  background: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4-VirtualValhalla/dpad.svg);
   position: absolute;
 }
 
@@ -1362,7 +1362,7 @@ background-position: 0 -70px;
 
 .ds4.white .back,
 .ds4 .start {
-  background-image: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4%20-%20VirtualValhalla/share.svg);
+  background-image: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4-VirtualValhalla/share.svg);
 }
 
 .ds4.white .button {
