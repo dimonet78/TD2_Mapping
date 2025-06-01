@@ -143,7 +143,7 @@ background-position: 0 -70px;
   opacity: 1;
 }
 
-.ds4 .back {
+/*.ds4 .back {
   position: absolute;
   background: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4-VirtualValhalla/share.svg);
   width: 28.4px;
@@ -152,7 +152,7 @@ background-position: 0 -70px;
   left: 306px;   /* Ajusta este valor */
   opacity: 0;
 }
-
+*/
 .ds4 .start {
   position: absolute;
   background: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4-VirtualValhalla/start.svg);
