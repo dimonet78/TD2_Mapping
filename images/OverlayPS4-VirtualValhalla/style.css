@@ -85,11 +85,11 @@
 }
 
 .ds4 .meta {
-  width: 42.4px;
-  height: 41.995px;
+  width: 41.99px;
+  height: 41.99px;
   position: absolute;
-  left: 461.181px;
-  bottom: 340.383px;
+  left: 461.186px;
+  top: 340.383px;
 }
 
 .ds4 .meta.pressed {
