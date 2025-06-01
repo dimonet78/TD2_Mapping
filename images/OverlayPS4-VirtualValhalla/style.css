@@ -1097,17 +1097,17 @@ strong {
 
 .ds4 .bumper {
   width: 99px;
-  height: 23px;
+  height: 22.4px;
   background: url(https://dimonet78.github.io/TD2_Mapping/images/OverlayPS4-VirtualValhalla/bumper.svg) no-repeat;
   opacity: 0;
 }
 
 .ds4 .bumpers {
   position: absolute;
-  width: 588px;
-  height: 23px;
-  left: 109px;
-  top: 94px;
+  width: 588.4px;
+  height: 22.4px;
+  left: 188.191px;
+  top: 94.4px;
 }
 
 .ds4 .bumper.pressed {
@@ -1126,11 +1126,11 @@ strong {
 }
 
 .ds4 .touchpad {
-  width: 262px;
-  height: 151px;
+  width: 263.837px;
+  height: 151.2px;
   position: absolute;
-  left: 272px;
-  top: 122px;
+  left: 350.487px;
+  top: 122.4px;
 }
 
 .ds4 .touchpad.pressed {
@@ -1138,11 +1138,11 @@ strong {
 }
 
 .ds4 .meta {
-  width: 42px;
-  height: 42px;
+  width: 42.4px;
+  height: 41.995px;
   position: absolute;
-  left: 382px;
-  bottom: 216px;
+  left: 461.181px;
+  bottom: 340.383px;
 }
 
 .ds4 .meta.pressed {
